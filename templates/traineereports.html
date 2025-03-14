@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trainer's Report</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #6f267e;
+            opacity: 0.6;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #333;
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        .feedback-form {
+            margin-top: 20px;
+        }
+        .feedback-form textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+        }
+        .feedback-form button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .feedback-form button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Trainee Reports</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Tasks Completed</th>
+                    <th>Progress</th>
+                    <th>Feedback</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for email, data in trainees.items() %}
+                <tr>
+                    <td>{{ data.name }}</td>
+                    <td>{{ email }}</td>
+                    <td>
+                        <ul>
+                            {% for task in data.tasks_completed %}
+                            <li>{{ task }}</li>
+                            {% endfor %}
+                        </ul>
+                    </td>
+                    <td>{{ data.progress }}</td>
+                    <td>
+                        <form action="/submit-feedback" method="post" class="feedback-form">
+                            <input type="hidden" name="email" value="{{ email }}">
+                            <textarea name="feedback" rows="3" placeholder="Add feedback..."></textarea>
+                            <button type="submit">Submit Feedback</button>
+                        </form>
+                        <!-- Display existing feedback -->
+                        <ul>
+                            {% for feedback in data.feedback %}
+                            <li>{{ feedback }}</li>
+                            {% endfor %}
+                        </ul>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trainer Menu - Desktop</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #6f267e;
+            opacity: 0.6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            width: 800px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+        .menu-header {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .trainer-info {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: #555;
+        }
+        .create-task {
+            margin-bottom: 20px;
+            display: flex;
+            gap: 10px; /* Add gap between buttons */
+        }
+        .create-task button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        .create-task button:hover {
+            background-color: #0056b3;
+        }
+        .trainees-list {
+            margin-bottom: 20px;
+        }
+        .trainees-list h3 {
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+            color: #333;
+        }
+        .trainees-list ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .trainees-list li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            background-color: #fafafa;
+        }
+        .trainees-list li button {
+            padding: 5px 15px;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+        .trainees-list li button:hover {
+            background-color: #218838;
+        }
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .pagination span {
+            padding: 8px 12px;
+            background-color: #f4f4f4;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+        .pagination span:hover {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="menu-header">Menu</div>
+        <div class="trainer-info">Trainer name</div>
+        <div class="create-task">
+            <button>Create a task</button>
+            <button onclick="window.location.href='/traineereports'">View Trainee Reports</button>
+        </div>
+        <hr>
+        <div class="trainees-list">
+            <h3>Trainees assigned to Mr/Ms. (Last name)</h3>
+            <ul>
+                <li>Trainee name <button>Set task</button></li>
+                <li>Trainee name <button>Set task</button></li>
+                <li>Trainee name <button>Set task</button></li>
+            </ul>
+        </div>
+        <div class="pagination">
+            <span>1</span>
+            <span>2</span>
+            <span>3</span>
+            <span>...</span>
+            <span>7</span>
+            <span>8</span>
+        </div>
+    </div>
+</body>
+</html>

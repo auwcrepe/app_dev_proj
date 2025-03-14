@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Tasks</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #6f267e;
+            opacity: 0.6;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #333;
+            text-align: center;
+        }
+        .task {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background-color: #fafafa;
+        }
+        .task h2 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #007bff;
+        }
+        .task p {
+            font-size: 1rem;
+            color: #555;
+        }
+        .minor-tasks-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        .minor-tasks-button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>TrainSmart generated</h1>
+
+        <!-- Python Training -->
+        <div class="task">
+            <h2>Python Training</h2>
+            <p>Schedule: {{python_training}}</p>
+            <p>Description: Learn Python programming basics.</p>
+        </div>
+
+        <!-- GUI Training -->
+        <div class="task">
+            <h2>GUI Training</h2>
+            <p>Schedule: {{gui_training}}</p>
+            <p>Description: Build user interfaces with Python.</p>
+        </div>
+    </div>
+
+    <!-- Minor Tasks Button -->
+    <button class="minor-tasks-button" onclick="window.location.href='/minortask'">
+        View Minor Tasks
+    </button>
+</body>
+</html>
